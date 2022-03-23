@@ -1,4 +1,4 @@
-import firebase from "../config";
+import firebase from "./config";
 import Cliente from "../../core/Cliente";
 import ClienteRepositorio from "../../core/ClienteRepositorio";
 
@@ -42,7 +42,7 @@ export default class ColecaoCliente implements ClienteRepositorio {
     }
 }
 
- #colecao() {
+     #colecao() {
     return firebase
     .firestore().collection('clientes')
     .withConverter(this.#conversor)

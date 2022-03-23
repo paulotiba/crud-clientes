@@ -1,12 +1,17 @@
 import { useState } from "react";
+import ColecaoCliente from "../backend/db/ColecaoCliente";
 import Botao from "../components/Botao";
 import Formulario from "../components/Formulario";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
 import Cliente from "../core/Cliente";
+import ClienteRepositorio from "../core/ClienteRepositorio";
 
 
 export default function Home() {
+
+
+  const repo: ClienteRepositorio = new ColecaoCliente()
   
   const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
